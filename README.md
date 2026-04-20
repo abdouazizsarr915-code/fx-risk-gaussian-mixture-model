@@ -17,17 +17,20 @@ This project implements a multivariate Gaussian mixture model estimated via the 
 ---
 
 ## Project Structure
+
+```
 scripts/
-01_download_data.R
-02_prepare_returns.R
-03_em_algorithm.R
-04_var_analysis.R
-05_gh_comparison.R
-06_run_project.R
+    01_download_data.R
+    02_prepare_returns.R
+    03_em_algorithm.R
+    04_var_analysis.R
+    05_gh_comparison.R
+    06_run_project.R
 
 data/
 figures/
 report/
+```
 
 ---
 
@@ -56,7 +59,10 @@ report/
 ![EM Convergence](figures/em_convergence.png)
 
 ### Regime Probabilities
-![Regimes](figures/regime_probabilities.png)
+![Regimes](figures/gamma_probabilities.png)
+
+### Regime Ellipses
+![Ellipses](figures/ellipses.png)
 
 ---
 
@@ -64,7 +70,7 @@ report/
 
 ```r
 source("scripts/06_run_project.R")
-
+```
 Author
 
 Abdoul Sarr
