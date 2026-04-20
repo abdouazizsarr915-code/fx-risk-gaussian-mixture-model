@@ -1,53 +1,70 @@
-# FX Risk Modeling with Gaussian Mixture and GH Distribution
+# FX Risk Modeling with Gaussian Mixture Model (EM Algorithm)
 
 ## Overview
 
-This project models foreign exchange (FX) returns using a multivariate Gaussian mixture model estimated via the EM algorithm. The analysis focuses on major currency pairs:
-
-- EUR/USD  
-- GBP/USD  
-- CAD/USD  
-
-The objective is to capture regime shifts in market behavior (calm vs stress) and improve risk estimation compared to standard Gaussian models.
+This project implements a multivariate Gaussian mixture model estimated via the Expectation-Maximization (EM) algorithm to model foreign exchange (FX) returns. It captures regime-switching behavior (calm vs stress) and evaluates risk using Value-at-Risk (VaR).
 
 ---
 
-## Methods
+## Objectives
 
-- Multivariate Gaussian Mixture Model (2 regimes)
-- EM algorithm for parameter estimation
-- Value-at-Risk (VaR) simulation
-- Generalized Hyperbolic (GH) distribution
-- Out-of-sample log-likelihood comparison
+- Model FX returns using a two-regime Gaussian mixture  
+- Estimate parameters using the EM algorithm  
+- Identify calm vs stress regimes  
+- Compute Value-at-Risk (VaR)  
+- Compare with a more flexible Generalized Hyperbolic (GH) distribution  
+
+---
+
+## Project Structure
+scripts/
+01_download_data.R
+02_prepare_returns.R
+03_em_algorithm.R
+04_var_analysis.R
+05_gh_comparison.R
+06_run_project.R
+
+data/
+figures/
+report/
+
+---
+
+## Methodology
+
+- **Data**: FX daily returns (EUR/USD, CAD/USD, GBP/USD)  
+- **Model**: Gaussian mixture (2 regimes)  
+- **Estimation**: EM algorithm  
+- **Risk measure**: Value-at-Risk (Monte Carlo simulation)  
+- **Benchmark**: GH distribution  
 
 ---
 
 ## Results
 
-- Identification of distinct market regimes (calm vs stress)
-- Better modeling of heavy tails using GH distribution
-- Improved risk estimation compared to Gaussian models
+- Clear separation between low and high volatility regimes  
+- EM algorithm converges quickly  
+- VaR captures extreme risk scenarios  
+- GH model provides better tail fit than Gaussian mixture  
 
 ---
 
-## Project Structure
+## Visual Results
 
-- Scripts/ → modeling and estimation code  
-- Data/ → FX return datasets  
-- Figures/ → generated visualizations  
+### EM Convergence
+![EM Convergence](figures/em_convergence.png)
 
----
-
-## Key Takeaways
-
-- Gaussian mixture models capture regime-switching behavior in FX markets  
-- GH distributions improve tail risk modeling  
-- Standard Gaussian assumptions underestimate extreme risk  
+### Regime Probabilities
+![Regimes](figures/regime_probabilities.png)
 
 ---
 
-## Author
+## How to Run
 
-Abdoul Sarr  
-BSc Mathematics & Economics  
-University of Ottawa  
+```r
+source("scripts/06_run_project.R")
+
+Author
+
+Abdoul Sarr
