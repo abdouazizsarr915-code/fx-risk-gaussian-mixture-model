@@ -51,7 +51,3 @@ The objective is to capture regime shifts in market behavior (calm vs stress) an
 Abdoul Sarr  
 BSc Mathematics & Economics  
 University of Ottawa  
-
-- Quantitative Finance  
-- Risk Modeling  
-- Time Series Analysis
